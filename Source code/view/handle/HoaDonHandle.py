@@ -17,6 +17,9 @@ class HoaDonQWidget(QtWidgets.QWidget):
         current_time=QDateTime.currentDateTime()
         label_time=current_time.toString('hh:mm dd/MM/yyyy')
         self.label_ThoiDiemGiaoDich.setText(label_time)
+    def closeEvent(self, event):
+        event.accept()
+        self.parent.show()
 
 class ThongTinThemTraXeQFrame(QtWidgets.QFrame):
     def __init__(self):

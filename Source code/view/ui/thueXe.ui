@@ -132,7 +132,7 @@ color: rgb(0, 0, 255);</string>
       <item>
        <widget class="QFrame" name="frame_2">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -365,6 +365,12 @@ font: 14pt &quot;Arial&quot;;
       </item>
       <item>
        <widget class="QFrame" name="frame_7">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="styleSheet">
          <string notr="true">font: 14pt &quot;Arial&quot;;
 </string>
@@ -391,34 +397,41 @@ font: 14pt &quot;Arial&quot;;
          <property name="bottomMargin">
           <number>5</number>
          </property>
-         <item>
-          <widget class="QLabel" name="label_9">
-           <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 255);</string>
+         <item alignment="Qt::AlignTop">
+          <widget class="QFrame" name="frame_PhuongThucThueXe">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
            </property>
-           <property name="text">
-            <string>Phương thức thuê xe</string>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="binhThuongButton">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;pre style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:19px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Consolas','Courier New','monospace'; font-size:10pt; color:#000000;&quot;&gt;Quy tắc tính tiền với t là số phút thuê:&lt;/span&gt;&lt;/pre&gt;&lt;pre style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Consolas','Courier New','monospace'; font-size:10pt; color:#000000;&quot;&gt;	t ≤ 10 :		miễn phí&lt;/span&gt;&lt;/pre&gt;&lt;pre style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Consolas','Courier New','monospace'; font-size:10pt; color:#000000;&quot;&gt;	10 &amp;lt; t ≤ 30: 	10.000*k VNĐ&lt;/span&gt;&lt;/pre&gt;&lt;pre style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Consolas','Courier New','monospace'; font-size:10pt; color:#000000;&quot;&gt;	30&amp;lt;t:		k*(10.000+⌈(t-30)/15⌉*3.000 ) VNĐ&lt;/span&gt;&lt;/pre&gt;&lt;pre style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Consolas','Courier New','monospace'; font-size:10pt; color:#000000;&quot;&gt;k=1 nếu xe đạp, k=1.2 nếu xe đạp đôi, k=1.5 nếu xe đạp đơn điện, k=2 nếu xe đạp điện đôi&lt;/span&gt;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="text">
-            <string>Bình thường</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="goi24hButton">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;pre style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:19px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Consolas','Courier New','monospace'; font-size:10pt; color:#000000;&quot;&gt;Thuê xe với giá k*200.000VNĐ/24h với t là số giờ thuê&lt;/span&gt;&lt;/pre&gt;&lt;pre style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Consolas','Courier New','monospace'; font-size:10pt; color:#000000;&quot;&gt;	t&amp;lt;12 : k*(200.000-10.000*⌈12-t⌉) VNĐ&lt;/span&gt;&lt;/pre&gt;&lt;pre style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Consolas','Courier New','monospace'; font-size:10pt; color:#000000;&quot;&gt;	t&amp;gt;24 : k*(200.000+2.000*⌈(t-24)*4⌉) VNĐ&lt;/span&gt;&lt;/pre&gt;&lt;pre style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Consolas','Courier New','monospace'; font-size:10pt; color:#000000;&quot;&gt;k=1 nếu xe đạp, k=1.2 nếu xe đạp đôi, k=1.5 nếu xe đạp đơn điện, k=2 nếu xe đạp điện đôi&lt;/span&gt;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="text">
-            <string>Gói 24h</string>
-           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_9">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(0, 0, 255);</string>
+              </property>
+              <property name="text">
+               <string>Phương thức thuê xe</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>

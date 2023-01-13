@@ -9,8 +9,11 @@ class TraXeQWidget(QtWidgets.QWidget):
         self.control=TraXeControl(self)
         self.frameTraXe.hide()
         self.pushButtonTimXe.clicked.connect(self.timXe)
+        self.pushButton_TraXe.clicked.connect(self.traXe)
 
     def timXe(self):
         self.frameTraXe.show()
 
+    def traXe(self):
+        self.control.traXe()
     
