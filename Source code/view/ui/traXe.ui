@@ -76,7 +76,7 @@
        <widget class="QLineEdit" name="lineEdit"/>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="pushButtonTimXe">
         <property name="text">
          <string>Tìm xe</string>
         </property>

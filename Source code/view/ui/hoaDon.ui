@@ -205,7 +205,7 @@ font: bold</string>
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QLineEdit" name="lineEdit_4">
+                 <widget class="QLineEdit" name="lineEdit_NguoiGiaoDich">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -247,7 +247,7 @@ font: bold</string>
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QLabel" name="label_10">
+                 <widget class="QLabel" name="label_ThoiDiemGiaoDich">
                   <property name="text">
                    <string>10:00 31/12/2022</string>
                   </property>
@@ -265,7 +265,7 @@ font: bold</string>
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QLabel" name="label_12">
+                 <widget class="QLabel" name="label_MaXe">
                   <property name="text">
                    <string>20223625</string>
                   </property>
@@ -283,7 +283,7 @@ font: bold</string>
                  </widget>
                 </item>
                 <item row="4" column="1">
-                 <widget class="QLabel" name="label_14">
+                 <widget class="QLabel" name="label_LoaiXe">
                   <property name="text">
                    <string>Xe đạp đơn</string>
                   </property>
@@ -301,7 +301,7 @@ font: bold</string>
                  </widget>
                 </item>
                 <item row="5" column="1">
-                 <widget class="QLabel" name="label_16">
+                 <widget class="QLabel" name="label_BienSoXe">
                   <property name="text">
                    <string>29A1-12345</string>
                   </property>
@@ -319,7 +319,7 @@ font: bold</string>
                  </widget>
                 </item>
                 <item row="6" column="1">
-                 <widget class="QLabel" name="label_18">
+                 <widget class="QLabel" name="label_NhaXe">
                   <property name="text">
                    <string>B1</string>
                   </property>
@@ -343,7 +343,7 @@ font: bold</string>
                  </widget>
                 </item>
                 <item row="7" column="1">
-                 <widget class="QLabel" name="label_22">
+                 <widget class="QLabel" name="label_PhuongThucThueXe">
                   <property name="text">
                    <string>gói 24h</string>
                   </property>
@@ -441,7 +441,7 @@ font: bold</string>
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QLineEdit" name="lineEdit">
+                 <widget class="QLineEdit" name="lineEdit_MaThe">
                   <property name="minimumSize">
                    <size>
                     <width>300</width>
@@ -465,7 +465,7 @@ font: bold</string>
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QLineEdit" name="lineEdit_2">
+                 <widget class="QLineEdit" name="lineEdit_ChuThe">
                   <property name="minimumSize">
                    <size>
                     <width>300</width>
