@@ -13,6 +13,7 @@ class HoaDonQWidget(QtWidgets.QWidget):
         timer=QTimer(self)
         timer.timeout.connect(self.showTime)
         timer.start(1000)
+        self.pushButton.clicked.connect(self.thanhToan)
     def showTime(self):
         current_time=QDateTime.currentDateTime()
         label_time=current_time.toString('hh:mm dd/MM/yyyy')
@@ -20,6 +21,9 @@ class HoaDonQWidget(QtWidgets.QWidget):
     def closeEvent(self, event):
         event.accept()
         self.parent.show()
+    
+    def thanhToan(self):
+        self.close()
 
 class ThongTinThemTraXeQFrame(QtWidgets.QFrame):
     def __init__(self):
