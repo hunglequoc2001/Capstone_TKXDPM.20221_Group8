@@ -2,3 +2,4 @@ K={'xe đạp đơn':1,'xe đạp đôi':1.2,'xe đạp điện đơn':1.5,'xe �
 PHUONGTHUCTHANHTOAN=['EcobikeBank']
 PHUONGTHUCTHUEXE=['Bình thường','Gói 24h']
 TOOL_TIP_PATH='./utils/toolTips'
+DB_NAME='ecobike'
