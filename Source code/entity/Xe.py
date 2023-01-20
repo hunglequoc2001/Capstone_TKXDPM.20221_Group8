@@ -23,3 +23,5 @@ class Xe:
             'Giá trị xe':self.__giaTriXe,
             'Lượng pin': self.__luongPin
         }
+    
+    

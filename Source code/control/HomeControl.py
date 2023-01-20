@@ -9,7 +9,9 @@ class HomeControl(BaseControl):
         self.view.label_SoNhaXe.setAlignment(Qt.AlignCenter)
         thongKeXe={x[0]:x[1] for x in self.connect.select('SELECT loaiXe,COUNT(loaiXe) FROM xe GROUP BY loaiXe')}
         thongKeXeSanSang={i:0 for i in thongKeXe}
-        for x in self.connect.select('SELECT loaiXe,COUNT(loaiXe) FROM xe JOIN xe_trong_nha_xe ON xe.maXe=xe_trong_nha_xe.maXe GROUP BY loaiXe'):
+        # for x in self.connect.select('SELECT loaiXe,COUNT(loaiXe) FROM xe JOIN xe_trong_nha_xe ON xe.maXe=xe_trong_nha_xe.maXe GROUP BY loaiXe'):
+        #     thongKeXeSanSang[x[0]]=x[1]
+        for x in self.connect.select('SELECT loaiXe, COUNT(loaiXe) FROM xe JOIN xe_trong_nha_xe on xe_trong_nha_xe.maXe=xe.maXe WHERE xe.maXe NOT IN ( SELECT maXe FROM xe_dang_duoc_thue ) GROUP BY loaiXe'):
             thongKeXeSanSang[x[0]]=x[1]
         for l in thongKeXe:
             label=QLabel(l)
