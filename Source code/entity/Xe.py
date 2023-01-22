@@ -12,7 +12,7 @@ class Xe:
             self.__giaTriXe=x[0][3]
             self.__luongPin=x[0][4]
         else:
-            raise Exception(f'Xe có maXe={maXe} không tồn tại')
+            raise Exception(f'Xe có mã xe={maXe} không tồn tại')
 
     def getThongTinXe(self):
         return {
@@ -24,4 +24,43 @@ class Xe:
             'Lượng pin': self.__luongPin
         }
     
-    
+    def kiemTraXeDangDuocThue(self):
+        conn=ConnectDatabase(database=DB_NAME)
+        res=conn.select(f'SELECT maThe,nguoiThueXe,phuongThucThueXe,thoiDiemThue FROM xe_dang_duoc_thue WHERE maXe={self.__maXe}')
+        if res:
+            self.__maThe=res[0][0]
+            self.__nguoiThueXe=res[0][1]
+            self.__phuongThucThueXe=res[0][2]
+            self.__thoiDiemThue=res[0][3]
+            return True
+        else:
+            return False
+
+    def kiemTraXeTrongNhaXe(self):
+        conn=ConnectDatabase(database=DB_NAME)
+        res=conn.select(f'SELECT maNhaXe,viTri,thoiDiemNhanXe FROM xe_trong_nha_xe WHERE maXe={self.__maXe}')
+        if res:
+            self.__maNhaXe=res[0][0]
+            self.__viTri=res[0][1]
+            self.__thoiDiemNhanXe=res[0][2]
+            return True
+        else:
+            return False        
+    def maXe(self):
+        return self.__maXe
+    def bienSoXe(self):
+        return self.__bienSoXe
+    def loaiXe(self):
+        return self.__loaiXe
+    def giaTriXe(self):
+        return self.__giaTriXe 
+    def luongPin(self):
+        return self.__luongPin
+    def nguoiThueXe(self):
+        return self.__nguoiThueXe
+    def phuongThucThueXe(self):
+        return self.__phuongThucThueXe
+    def thoiDiemThueXe(self):
+        return self.__thoiDiemThue
+    def thoiDiemNhanXe(self):
+        return self.__thoiDiemNhanXe

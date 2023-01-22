@@ -23,11 +23,27 @@ class ThueXeQWidget(QtWidgets.QWidget):
         self.pushButtonTimXe.clicked.connect(self.timXe)
         self.pushButtonThueXe.clicked.connect(self.thueXe)
         self.frameThueXe.hide()
-
+        
+    def loadThongTin(self,maXe,loaiXe,bienSoXe,giaCoc,luongPin):
+        self.label_maXe.setText(f"{maXe}")
+        self.label_bienSoXe.setText(bienSoXe)
+        self.label_giaCoc.setText(f"{int(giaCoc)} VNĐ")
+        self.label_loaiXe.setText(loaiXe)
+        self.label_luongPin.setText(f"{luongPin}")
 
     def timXe(self):
-        self.frameThueXe.show()
-
+        try:
+            maVach=self.lineEdit_maVach.text()
+            self.control.timXe(maVach)
+            self.frameThueXe.show()
+        except Exception as e:
+            msg = QtWidgets.QMessageBox()
+            msg.setIcon(QtWidgets.QMessageBox.Information)
+            msg.setText(str(e))
+            msg.setWindowTitle('Thông báo')
+            msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
+            retval = msg.exec_()
+        
     def thueXe(self):
         self.control.thueXe()
         return

@@ -67,7 +67,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit"/>
+       <widget class="QLineEdit" name="lineEdit_maVach"/>
       </item>
       <item>
        <widget class="QPushButton" name="pushButtonTimXe">
@@ -317,35 +317,35 @@ font: 14pt &quot;Arial&quot;;
                    <number>0</number>
                   </property>
                   <item>
-                   <widget class="QLabel" name="label_16">
+                   <widget class="QLabel" name="label_maXe">
                     <property name="text">
                      <string>20223625</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_15">
+                   <widget class="QLabel" name="label_loaiXe">
                     <property name="text">
                      <string>Xe đạp đơn</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_14">
+                   <widget class="QLabel" name="label_bienSoXe">
                     <property name="text">
                      <string>29A1-12345</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_5">
+                   <widget class="QLabel" name="label_luongPin">
                     <property name="text">
                      <string>0</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_7">
+                   <widget class="QLabel" name="label_giaCoc">
                     <property name="text">
                      <string>400.000 VNĐ</string>
                     </property>

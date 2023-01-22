@@ -3,3 +3,4 @@ PHUONGTHUCTHANHTOAN=['EcobikeBank']
 PHUONGTHUCTHUEXE=['Bình thường','Gói 24h']
 TOOL_TIP_PATH='./utils/toolTips'
 DB_NAME='ecobike'
+heSoTienCoc=0.4

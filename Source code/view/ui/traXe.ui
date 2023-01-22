@@ -73,7 +73,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit"/>
+       <widget class="QLineEdit" name="lineEdit_maVach"/>
       </item>
       <item>
        <widget class="QPushButton" name="pushButtonTimXe">
@@ -291,6 +291,18 @@ font: 14pt &quot;Arial&quot;;
                     </property>
                    </widget>
                   </item>
+                  <item>
+                   <widget class="QLabel" name="labelNoiTraXe">
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(0, 0, 255);
+font: bold 14pt &quot;Arial&quot;;
+</string>
+                    </property>
+                    <property name="text">
+                     <string>Nơi trả xe</string>
+                    </property>
+                   </widget>
+                  </item>
                  </layout>
                 </widget>
                </item>
@@ -319,51 +331,58 @@ font: 14pt &quot;Arial&quot;;
                    <number>0</number>
                   </property>
                   <item>
-                   <widget class="QLabel" name="label_16">
+                   <widget class="QLabel" name="label_maXe">
                     <property name="text">
                      <string>20223625</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_15">
+                   <widget class="QLabel" name="label_nguoiThueXe">
                     <property name="text">
                      <string>Lê Quốc Hưng</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_17">
+                   <widget class="QLabel" name="label_loaiXe">
                     <property name="text">
                      <string>Xe đạp đơn</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_14">
+                   <widget class="QLabel" name="label_bienSoXe">
                     <property name="text">
                      <string>29A1-12345</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_18">
+                   <widget class="QLabel" name="label_phuongThucThueXe">
                     <property name="text">
                      <string>Gói 24h</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_5">
+                   <widget class="QLabel" name="label_giaCoc">
                     <property name="text">
                      <string>400.000 VNĐ</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_7">
+                   <widget class="QLabel" name="label_thoiDiemThue">
                     <property name="text">
                      <string>12:00 30/12/2022 </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_noiTraXe">
+                    <property name="text">
+                     <string>Nhà xe B1</string>
                     </property>
                    </widget>
                   </item>
@@ -430,35 +449,6 @@ font: 14pt &quot;Arial&quot;;
             <property name="bottomMargin">
              <number>0</number>
             </property>
-            <item>
-             <widget class="QLabel" name="label_19">
-              <property name="styleSheet">
-               <string notr="true">color: rgb(0, 0, 255);
-font: bold 14pt &quot;Arial&quot;;
-</string>
-              </property>
-              <property name="text">
-               <string>Nơi trả xe</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="comboBox">
-              <property name="styleSheet">
-               <string notr="true">font: 14pt &quot;Arial&quot;;</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>Nhà xe B1</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Nhà xe D3</string>
-               </property>
-              </item>
-             </widget>
-            </item>
            </layout>
           </widget>
          </item>
@@ -496,7 +486,7 @@ font: bold 14pt &quot;Arial&quot;;
 font:bold;</string>
               </property>
               <property name="text">
-               <string>Ước lượng số tiền phải trả lúc</string>
+               <string>Ước lượng số tiền phải trả nếu trả xe lúc</string>
               </property>
              </widget>
             </item>
@@ -504,7 +494,7 @@ font:bold;</string>
              <widget class="QDateTimeEdit" name="dateTimeEdit"/>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_2">
+             <widget class="QPushButton" name="pushButtonTinhTien">
               <property name="styleSheet">
                <string notr="true">background-color: rgb(240, 240, 240);</string>
               </property>
@@ -635,14 +625,14 @@ font:bold;</string>
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_21">
+                <widget class="QLabel" name="label_tienThueXe">
                  <property name="text">
                   <string>200.000 VNĐ</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_23">
+                <widget class="QLabel" name="label_tienHoanTra">
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 255, 0);</string>
                  </property>
@@ -652,7 +642,7 @@ font:bold;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_25">
+                <widget class="QLabel" name="label_tienTraThem">
                  <property name="styleSheet">
                   <string notr="true">color: rgb(255, 0, 0);</string>
                  </property>
@@ -668,7 +658,7 @@ font:bold;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_TraXe">
+          <widget class="QPushButton" name="pushButtonTraXe">
            <property name="styleSheet">
             <string notr="true">font: 75 14pt &quot;Arial&quot;;
 background-color: rgb(255, 0, 0);
