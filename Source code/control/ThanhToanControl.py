@@ -11,9 +11,11 @@ class ThanhToanControl(BaseControl):
             # Thanh toán
             maBaoMat=self.view.frameThe.lineEdit_MaBaoMat.text()
             noiDung=f'Thanh toán {self.view.label_NoiDung.text()}'
+            #Thêm code
         elif self.hoaDon.tien<0:
             # Hoàn tiền
             noiDung=f'Hoàn tiền {self.view.label_NoiDung.text()}'
+            #Thêm code
         
 
         return True
