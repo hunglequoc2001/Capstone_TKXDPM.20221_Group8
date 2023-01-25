@@ -9,7 +9,8 @@ class TraXeQWidget(QtWidgets.QWidget):
         self.control=TraXeControl(self)
         self.frameTraXe.hide()
         self.pushButtonTimXe.clicked.connect(self.timXe)
-        self.pushButtonTraXe.clicked.connect(self.traXe)
+        self.pushButtonTraXe.clicked.connect(self.control.traXe)
+        self.pushButtonTinhTien.clicked.connect(self.control.tinhTien)
 
     def loadThongTin(self,maXe,nguoiThueXe,bienSoXe,giaCoc,loaiXe,phuongThucThueXe,thoiDiemThue):
         self.label_maXe.setText(f'{maXe}')
@@ -41,6 +42,6 @@ class TraXeQWidget(QtWidgets.QWidget):
             msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
             retval = msg.exec_()
 
-    def traXe(self):
-        self.control.traXe()
+    # def traXe(self):
+    #     self.control.traXe()
     

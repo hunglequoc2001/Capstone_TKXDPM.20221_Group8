@@ -7,21 +7,21 @@ class ThueXeQWidget(QtWidgets.QWidget):
         uic.loadUi("./view/ui/thueXe.ui", self)
         self.parent=parent
         self.control=ThueXeControl(self)
-        radioButtonGroup=QtWidgets.QButtonGroup()
+        self.radioButtonGroup=QtWidgets.QButtonGroup()
         self.phuongThucThueXe=[]
-        for x in config.PHUONGTHUCTHUEXE:
+        for i,x in enumerate(config.PHUONGTHUCTHUEXE):
             radioButton=QtWidgets.QRadioButton(x)
             with open(config.TOOL_TIP_PATH+f'/{x}.txt','r',encoding="UTF-8") as f:
                 radioButton.setToolTip(f.read())
             self.frame_PhuongThucThueXe.layout().addWidget(radioButton)
             self.phuongThucThueXe.append(radioButton)
-            radioButtonGroup.addButton(radioButton)
+            self.radioButtonGroup.addButton(radioButton,i)
         self.phuongThucThueXe[0].setChecked(True)
         # radioButtonGroup.addButton(self.binhThuongButton)
         # self.binhThuongButton.setChecked(True)
         # radioButtonGroup.addButton(self.goi24hButton)
         self.pushButtonTimXe.clicked.connect(self.timXe)
-        self.pushButtonThueXe.clicked.connect(self.thueXe)
+        self.pushButtonThueXe.clicked.connect(self.control.thueXe)
         self.frameThueXe.hide()
         
     def loadThongTin(self,maXe,loaiXe,bienSoXe,giaCoc,luongPin):
@@ -44,6 +44,3 @@ class ThueXeQWidget(QtWidgets.QWidget):
             msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
             retval = msg.exec_()
         
-    def thueXe(self):
-        self.control.thueXe()
-        return

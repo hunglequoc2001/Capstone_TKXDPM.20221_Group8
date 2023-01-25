@@ -18,3 +18,7 @@ class MaVachControl(BaseControl):
             return True
         else:
             return False
+
+    @abstractmethod
+    def capNhatSauKhiThanhToan(self):
+        pass

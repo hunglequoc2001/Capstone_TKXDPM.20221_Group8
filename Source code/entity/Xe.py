@@ -1,5 +1,6 @@
 from connect_database.ConnectMySQL import ConnectDatabase
 from utils.config import DB_NAME
+from entity.NhaXe import NhaXe
 class Xe:
     def __init__(self,maXe):
         conn=ConnectDatabase(database=DB_NAME)
@@ -26,16 +27,18 @@ class Xe:
     
     def kiemTraXeDangDuocThue(self):
         conn=ConnectDatabase(database=DB_NAME)
-        res=conn.select(f'SELECT maThe,nguoiThueXe,phuongThucThueXe,thoiDiemThue FROM xe_dang_duoc_thue WHERE maXe={self.__maXe}')
+        res=conn.select(f'SELECT maThe,nguoiThueXe,phuongThucThueXe,thoiDiemThue,noiThueXe FROM xe_dang_duoc_thue WHERE maXe={self.__maXe}')
         if res:
             self.__maThe=res[0][0]
             self.__nguoiThueXe=res[0][1]
             self.__phuongThucThueXe=res[0][2]
             self.__thoiDiemThue=res[0][3]
+            self.__noiThueXe=res[0][4]
             return True
         else:
             return False
-
+    def setNguoiThueXe(self,nguoiThueXe):
+        self.__nguoiThueXe=nguoiThueXe
     def kiemTraXeTrongNhaXe(self):
         conn=ConnectDatabase(database=DB_NAME)
         res=conn.select(f'SELECT maNhaXe,viTri,thoiDiemNhanXe FROM xe_trong_nha_xe WHERE maXe={self.__maXe}')
@@ -46,6 +49,14 @@ class Xe:
             return True
         else:
             return False        
+    def maNhaXe(self):
+        return self.__maNhaXe
+    def tenNhaXe(self):
+        nhaxe=NhaXe(self.__maNhaXe)
+        return nhaxe.getThongTinNhaXe()['Tên nhà xe']
+    def noiThueXe(self):
+        nhaxe=NhaXe(self.__noiThueXe)
+        return nhaxe.getThongTinNhaXe()['Tên nhà xe']
     def maXe(self):
         return self.__maXe
     def bienSoXe(self):
@@ -60,7 +71,13 @@ class Xe:
         return self.__nguoiThueXe
     def phuongThucThueXe(self):
         return self.__phuongThucThueXe
+    def setPhuongThucThueXe(self,phuongThucThueXe):
+        self.__phuongThucThueXe=phuongThucThueXe
     def thoiDiemThueXe(self):
         return self.__thoiDiemThue
+    def setThoiDiemThueXe(self,thoiDiemThueXe):
+        self.__thoiDiemThue=thoiDiemThueXe
     def thoiDiemNhanXe(self):
         return self.__thoiDiemNhanXe
+    def maThe(self):
+        return self.__maThe

@@ -36,29 +36,74 @@
     <number>0</number>
    </property>
    <item row="0" column="0">
-    <widget class="QLabel" name="label_19">
+    <widget class="QLabel" name="label_3">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 255);
+font: bold</string>
+     </property>
+     <property name="text">
+      <string>Mã thẻ</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="lineEdit_MaThe">
      <property name="minimumSize">
       <size>
        <width>300</width>
        <height>0</height>
       </size>
      </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_4">
      <property name="styleSheet">
       <string notr="true">color: rgb(0, 0, 255);
 font: bold</string>
      </property>
      <property name="text">
-      <string>Tiền cọc</string>
+      <string>Chủ thẻ</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="1">
-    <widget class="QLabel" name="label_SoTienCoc">
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 0, 0);</string>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="lineEdit_ChuThe">
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>0</height>
+      </size>
      </property>
      <property name="text">
-      <string>400.000 VNĐ</string>
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 255);
+font: bold</string>
+     </property>
+     <property name="text">
+      <string>Mã bảo mật</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="lineEdit_MaBaoMat">
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </item>
