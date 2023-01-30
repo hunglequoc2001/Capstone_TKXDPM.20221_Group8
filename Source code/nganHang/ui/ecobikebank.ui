@@ -107,6 +107,20 @@ font: bold</string>
      </property>
     </widget>
    </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 255);
+font: bold</string>
+     </property>
+     <property name="text">
+      <string>Ngày hết hạn</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QDateEdit" name="dateEdit_NgayHetHan"/>
+   </item>
   </layout>
  </widget>
  <resources/>

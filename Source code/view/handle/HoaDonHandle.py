@@ -42,7 +42,7 @@ class HoaDonQWidget(QtWidgets.QWidget):
     
     def thanhToan(self):
         try:
-            self.the=The.The(self.frameThe.lineEdit_MaThe.text())
+            self.the=self.frameThe.the()
             self.control.hoaDon.setNguoiGiaoDich(self.lineEdit_NguoiGiaoDich.text())
             self.control.hoaDon.setThoiDiemGiaoDich(datetime.strptime(self.label_ThoiDiemGiaoDich.text(),'%H:%M %d/%m/%Y'))
             self.kq=self.control.thanhToan(self.the)
