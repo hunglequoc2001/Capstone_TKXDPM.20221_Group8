@@ -6,6 +6,7 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import QDateTime,QTimer,Qt
 from control.ThanhToanControl import ThanhToanControl
 from utils.config import PHUONGTHUCTHANHTOAN,PHUONGTHUCTHUEXE
+from view.handle.ThanhToanThanhCong import ThanhToanThanhCongDialog
 # from entity.Xe import Xe
 class HoaDonQWidget(QtWidgets.QWidget):
     def __init__(self,parent,hoaDon):
@@ -34,10 +35,12 @@ class HoaDonQWidget(QtWidgets.QWidget):
         label_time=current_time.toString('hh:mm dd/MM/yyyy')
         self.label_ThoiDiemGiaoDich.setText(label_time)
     def closeEvent(self, event):
-        event.accept()
         if self.kq:
             self.parent.mainWidget.control.capNhatSauKhiThanhToan(self.the)
+            thanhCong=ThanhToanThanhCongDialog(self)
+            thanhCong.exec()
             self.parent.clickHomeButton()
+        event.accept()
         self.parent.show()
     
     def thanhToan(self):

@@ -83,6 +83,11 @@
       </item>
       <item>
        <widget class="QPushButton" name="pushButtonTimXe">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 255, 255);
+color: rgb(0, 0, 255);
+font: bold</string>
+        </property>
         <property name="text">
          <string>Tìm xe</string>
         </property>
@@ -297,18 +302,6 @@ font: 14pt &quot;Arial&quot;;
                     </property>
                    </widget>
                   </item>
-                  <item>
-                   <widget class="QLabel" name="labelNoiTraXe">
-                    <property name="styleSheet">
-                     <string notr="true">color: rgb(0, 0, 255);
-font: bold 14pt &quot;Arial&quot;;
-</string>
-                    </property>
-                    <property name="text">
-                     <string>Nơi trả xe</string>
-                    </property>
-                   </widget>
-                  </item>
                  </layout>
                 </widget>
                </item>
@@ -382,13 +375,6 @@ font: bold 14pt &quot;Arial&quot;;
                    <widget class="QLabel" name="label_thoiDiemThue">
                     <property name="text">
                      <string>12:00 30/12/2022 </string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_noiTraXe">
-                    <property name="text">
-                     <string>Nhà xe B1</string>
                     </property>
                    </widget>
                   </item>
@@ -481,7 +467,9 @@ font:bold;</string>
             <item>
              <widget class="QPushButton" name="pushButtonTinhTien">
               <property name="styleSheet">
-               <string notr="true"/>
+               <string notr="true">background-color: rgb(0, 255, 255);
+color: rgb(0, 0, 255);
+font: bold</string>
               </property>
               <property name="text">
                <string>Tính</string>

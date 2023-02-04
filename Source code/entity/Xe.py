@@ -48,7 +48,13 @@ class Xe:
             self.__thoiDiemNhanXe=res[0][2]
             return True
         else:
-            return False        
+            return False   
+    def setThongTinTraXe(self,maNhaXe,viTri,thoiDiemNhanXe):
+        self.__maNhaXe=maNhaXe
+        self.__viTri=viTri
+        self.__thoiDiemNhanXe=thoiDiemNhanXe
+    def viTri(self):
+        return self.__viTri
     def maNhaXe(self):
         return self.__maNhaXe
     def tenNhaXe(self):

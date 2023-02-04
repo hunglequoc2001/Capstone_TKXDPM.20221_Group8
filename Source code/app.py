@@ -1,4 +1,5 @@
 from view.handle import MainHandle,SplashHandle
+from nganHang.handle.Ecobikebank import EcobikeBankFrame
 from PyQt5 import QtWidgets, uic, QtCore
 from time import sleep
 import sys
@@ -11,8 +12,6 @@ if __name__ == "__main__":
     splash.move(screen_center(splash))
     splash.progress()
     App = MainHandle.MainWindow()
-    # print(type(App))
-    # App.move(screen_center(App))
     App.show()
-    # splash.finish(App)
+    
     sys.exit(MainApp.exec_())

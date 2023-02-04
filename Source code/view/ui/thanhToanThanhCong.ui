@@ -42,13 +42,6 @@
       <item>
        <widget class="QPushButton" name="pushButton">
         <property name="text">
-         <string>Lưu hóa đơn</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="text">
          <string>Quay về home</string>
         </property>
        </widget>

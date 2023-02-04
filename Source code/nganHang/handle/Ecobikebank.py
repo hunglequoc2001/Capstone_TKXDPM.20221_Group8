@@ -8,9 +8,9 @@ class EcobikeBankFrame(QtWidgets.QFrame):
         self.dateEdit_NgayHetHan.setDisplayFormat('MM-yy')
     def the(self):
         date=self.dateEdit_NgayHetHan.date()
-        return The({
-            "mã thẻ":self.lineEdit_MaThe.text(),
-            "mã bảo mật":self.lineEdit_MaBaoMat.text(),
-            "chủ thẻ":self.lineEdit_ChuThe.text(),
-            "ngày hết hạn":(date.month(),date.year()%100)
-        })
+        return The(maThe=self.lineEdit_MaThe.text(),
+            maBaoMat=self.lineEdit_MaBaoMat.text(),
+            chuThe=self.lineEdit_ChuThe.text(),
+            ngayHetHan=(date.month(),date.year()%100)
+        )
+
