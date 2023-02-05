@@ -9,8 +9,8 @@ class ThueXeControl(MaVachControl):
         super().timXe(maVach)
         if not self.xe.kiemTraXeTrongNhaXe():
             raise Exception("Xe đã được thuê.\n Vui lòng chọn xe khác")
-        if self.xe.kiemTraXeDangDuocThue():
-            raise Exception("Xe bạn chọn đang trong quá trình trả xe.\nVui lòng chờ người thuê xe cũ hoàn tất thủ tục hoặc chọn xe khác")
+        # if self.xe.kiemTraXeDangDuocThue():
+            # raise Exception("Xe bạn chọn đang trong quá trình trả xe.\nVui lòng chờ người thuê xe cũ hoàn tất thủ tục hoặc chọn xe khác")
         self.view.loadThongTin(
             maXe=self.xe.maXe(),
             loaiXe=self.xe.loaiXe(),

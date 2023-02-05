@@ -1,4 +1,6 @@
 from PyQt5 import QtWidgets, uic,QtCore
+from os.path import exists,join
+from PyQt5.QtGui import QPixmap
 from entity.Xe import Xe
 class ChiTietNhaXeQWidget(QtWidgets.QWidget):
     def __init__(self,nhaXe,parent):
@@ -6,6 +8,10 @@ class ChiTietNhaXeQWidget(QtWidgets.QWidget):
         self.parent=parent
         uic.loadUi("./view/ui/chiTietNhaXe.ui", self)
         thongTin=nhaXe.getThongTinNhaXe()
+        if exists(join('./view/icon',f"{thongTin['Tên nhà xe']}.png")):
+            pixmap=QPixmap(join('./view/icon',f"{thongTin['Tên nhà xe']}.png"))
+            self.label_AnhMinhHoa.setPixmap(pixmap)
+        
         self.label_TenNhaXe.setText("Nhà xe "+thongTin['Tên nhà xe'])
         self.label_DiaChi.setText(thongTin['Địa chỉ'])
         self.label_SoDienThoai.setText(thongTin['Số điện thoại'])

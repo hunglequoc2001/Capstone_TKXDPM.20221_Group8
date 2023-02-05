@@ -1,5 +1,7 @@
 from PyQt5 import QtWidgets, uic
 from control.ThueXeControl import ThueXeControl
+from os.path import exists,join
+from PyQt5.QtGui import QPixmap
 from utils import config
 class ThueXeQWidget(QtWidgets.QWidget):
     def __init__(self,parent):
@@ -29,6 +31,9 @@ class ThueXeQWidget(QtWidgets.QWidget):
         self.label_bienSoXe.setText(bienSoXe)
         self.label_giaCoc.setText(f"{int(giaCoc)} VNĐ")
         self.label_loaiXe.setText(loaiXe)
+        if exists(join('./view/icon',f"{loaiXe}.png")):
+            pixmap=QPixmap(join('./view/icon',f"{loaiXe}.png"))
+            self.label_xe.setPixmap(pixmap)
         self.label_luongPin.setText(f"{luongPin}")
 
     def timXe(self):

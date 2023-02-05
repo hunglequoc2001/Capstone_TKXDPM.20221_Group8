@@ -78,6 +78,15 @@ class ThueXeHoaDonQWidget(HoaDonQWidget):
     def thanhToan(self):
         self.control.hoaDon.xe().setNguoiThueXe(self.lineEdit_NguoiGiaoDich.text())
         self.control.hoaDon.xe().setThoiDiemThueXe(datetime.strptime(self.label_ThoiDiemGiaoDich.text(),'%H:%M %d/%m/%Y'))
+        
+        if self.control.checkTheDaDung(self.frameThe.lineEdit_MaThe.text()):
+            msg = QtWidgets.QMessageBox()
+            msg.setIcon(QtWidgets.QMessageBox.Information)
+            msg.setText("Thẻ đã được dùng để thuê xe khác")
+            msg.setWindowTitle('Thông báo')
+            msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
+            retval = msg.exec_()
+            return
         super().thanhToan()
 
 class TraXeHoaDonQWidget(HoaDonQWidget):

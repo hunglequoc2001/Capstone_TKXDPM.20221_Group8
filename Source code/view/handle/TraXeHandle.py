@@ -1,4 +1,6 @@
 from PyQt5 import QtWidgets, uic
+from os.path import exists,join
+from PyQt5.QtGui import QPixmap
 from control.TraXeControl import TraXeControl
 class TraXeQWidget(QtWidgets.QWidget):
     def __init__(self,parent):
@@ -18,6 +20,9 @@ class TraXeQWidget(QtWidgets.QWidget):
         self.label_bienSoXe.setText(bienSoXe)
         self.label_giaCoc.setText(f"{int(giaCoc)} VNĐ")
         self.label_loaiXe.setText(loaiXe)
+        if exists(join('./view/icon',f"{loaiXe}.png")):
+            pixmap=QPixmap(join('./view/icon',f"{loaiXe}.png"))
+            self.label_xe.setPixmap(pixmap)
         self.label_phuongThucThueXe.setText(phuongThucThueXe)
         self.label_thoiDiemThue.setText(thoiDiemThue.strftime('%H:%M %d/%m/%Y'))
     def capNhatThongTinTien(self,tienThue,tienCoc):
