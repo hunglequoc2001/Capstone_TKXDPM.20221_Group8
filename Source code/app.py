@@ -1,5 +1,4 @@
 from view.handle import MainHandle,SplashHandle
-from nganHang.handle.Ecobikebank import EcobikeBankFrame
 from PyQt5 import QtWidgets, uic, QtCore
 from time import sleep
 import sys

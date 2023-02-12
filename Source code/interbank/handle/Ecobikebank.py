@@ -3,7 +3,7 @@ from entity.The import The
 class EcobikeBankFrame(QtWidgets.QFrame):
     def __init__(self):
         super().__init__()
-        uic.loadUi("./nganHang/ui/ecobikebank.ui", self)
+        uic.loadUi("./interbank/ui/ecobikebank.ui", self)
         self.lineEdit_MaBaoMat.setEchoMode(QtWidgets.QLineEdit.Password)
         self.dateEdit_NgayHetHan.setDisplayFormat('MM-yy')
     def the(self):

@@ -30,15 +30,19 @@ class TraXeControl(MaVachControl):
         self.view.capNhatThongTinTien(tienThue=self.tienThue,tienCoc=self.tienCoc)
 
     def traXe(self):
-        maNhaXe, done1 = QtWidgets.QInputDialog.getText(
-            self.view.parent, 'Trả xe', 'Nhập mã nhà xe:')
-        if not done1:
-            Exception("Giao dịch không thành công")
+        maNhaXe=self.view.lineEdit_maNhaXe.text()
+        if maNhaXe=='':
+            Exception("Vui lòng nhập mã nhà xe")
+        if not maNhaXe.isnumeric():
+            Exception("Bạn nhập sai cú pháp mã nhà xe")
+        else:
+            maNhaXe=int(maNhaXe)
         nhaXe=NhaXe(maNhaXe)
-        viTri,done2 = QtWidgets.QInputDialog.getText(
-            self.view.parent, 'Trả xe', 'Nhập vị trí:')
-        if not done2:
-            Exception("Giao dịch không thành công")
+        maNhaXe=self.view.lineEdit_maNhaXe.text()
+        nhaXe=NhaXe(maNhaXe)
+        viTri=self.view.lineEdit_viTri.text()
+        if maNhaXe=='':
+            Exception("Vui lòng nhập vị trí trả xe")
         self.dateTime=datetime.now()
         self.xe.setThongTinTraXe(maNhaXe,viTri,self.dateTime)
         self.tienThue=self.tinhTien.tinhTien(thoiDiemDau=self.xe.thoiDiemThueXe(),thoiDiemCuoi=self.dateTime,k=K[self.xe.loaiXe().lower()])

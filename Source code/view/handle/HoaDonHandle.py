@@ -1,7 +1,7 @@
 import sys
 from entity import The
 from datetime import datetime
-from nganHang.handle.Ecobikebank import EcobikeBankFrame
+from interbank.handle.Ecobikebank import EcobikeBankFrame
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import QDateTime,QTimer,Qt
 from control.ThanhToanControl import ThanhToanControl
