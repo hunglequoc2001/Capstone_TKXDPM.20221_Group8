@@ -60,5 +60,4 @@ class TraXeControl(MaVachControl):
 
     def capNhatSauKhiThanhToan(self,the):
         self.connect.idu(f"DELETE FROM xe_dang_duoc_thue WHERE maXe={self.xe.maXe()}")
-        self.connect.idu(f"INSERT INTO hoa_don(nguoiGiaoDich, maThe, maXe, noiDung, maNhaXe, thoiDiemGiaoDich, soTienThanhToan, phuongThucThanhToan) VALUES ('{self.hoaDon.nguoiGiaoDich()}','{the.maThe()}',{self.xe.maXe()},'trả xe',{self.xe.maNhaXe()},'{self.hoaDon.thoiDiemGiaoDich().strftime('%Y-%m-%d %H:%M:%S')}',{self.tienThue-self.tienCoc},'{the.nganHang}')")
         self.connect.idu(f"INSERT INTO xe_trong_nha_xe(maXe, maNhaXe, viTri, thoiDiemNhanXe) VALUES ({self.xe.maXe()},{self.xe.maNhaXe()},'{self.xe.viTri()}','{self.xe.thoiDiemNhanXe()}')")

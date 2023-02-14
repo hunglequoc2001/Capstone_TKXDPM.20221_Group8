@@ -29,4 +29,3 @@ class ThueXeControl(MaVachControl):
     def capNhatSauKhiThanhToan(self,the):
         self.connect.idu(f'DELETE FROM xe_trong_nha_xe WHERE maXe={self.xe.maXe()}')
         self.connect.idu(f"INSERT INTO xe_dang_duoc_thue(maXe,maThe,nguoiThueXe,phuongThucThueXe,thoiDiemThue,noiThueXe) VALUES ({self.xe.maXe()},'{the.maThe()}','{self.xe.nguoiThueXe()}',{self.xe.phuongThucThueXe()},'{self.xe.thoiDiemThueXe().strftime('%Y-%m-%d %H:%M:%S')}',{self.xe.maNhaXe()})")
-        self.connect.idu(f"INSERT INTO hoa_don(nguoiGiaoDich, maThe, maXe, noiDung, maNhaXe, thoiDiemGiaoDich, soTienThanhToan, phuongThucThanhToan) VALUES ('{self.xe.nguoiThueXe()}','{the.maThe()}',{self.xe.maXe()},'thuê xe',{self.xe.maNhaXe()},'{self.xe.thoiDiemThueXe().strftime('%Y-%m-%d %H:%M:%S')}',{self.tienCoc},'{the.nganHang}')")

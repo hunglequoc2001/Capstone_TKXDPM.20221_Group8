@@ -4,7 +4,8 @@ import hashlib
 class Interbank:
     def __init__(self,baseurl):
         self.baseurl=baseurl
-    def interbankPayment(self,cardCode, owner,cvvCode,dateExpired,command,transactionContent,amount,createdAt,appCode,secretKey):
+    def interbankPayment(self,cardCode, owner,cvvCode,dateExpired,command,transactionContent,amount,createdAt,appCode="",secretKey=""):
+        return True
         data={"secretKey":secretKey,
             "transaction":{
                 "cardCode":cardCode,
