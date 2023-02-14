@@ -58,5 +58,5 @@ class TraXeControl(MaVachControl):
         self.view.capNhatThongTinTien(tienThue=self.tienThue,tienCoc=self.tienCoc)
         pass
 
-    def capNhatSauKhiThanhToan(self,maThe):
+    def capNhatSauKhiThanhToan(self):
         self.xe.capNhatThongTinTraXe(self.connect)

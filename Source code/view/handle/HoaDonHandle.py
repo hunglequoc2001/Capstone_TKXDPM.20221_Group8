@@ -36,7 +36,7 @@ class HoaDonQWidget(QtWidgets.QWidget):
         self.label_ThoiDiemGiaoDich.setText(label_time)
     def closeEvent(self, event):
         if self.kq:
-            self.parent.mainWidget.control.capNhatSauKhiThanhToan(self.the.maThe())
+            self.parent.mainWidget.control.capNhatSauKhiThanhToan()
             thanhCong=ThanhToanThanhCongDialog(self)
             thanhCong.exec()
             self.parent.clickHomeButton()
@@ -77,8 +77,9 @@ class ThueXeHoaDonQWidget(HoaDonQWidget):
 
     def thanhToan(self):
         self.control.hoaDon.xe().setNguoiThueXe(self.lineEdit_NguoiGiaoDich.text())
-        self.control.hoaDon.xe().setThoiDiemThueXe(datetime.strptime(self.label_ThoiDiemGiaoDich.text(),'%H:%M %d/%m/%Y'))
-        
+        self.control.hoaDon.xe().setThoiDiemThue(datetime.strptime(self.label_ThoiDiemGiaoDich.text(),'%H:%M %d/%m/%Y'))
+        # print(datetime.strptime(self.label_ThoiDiemGiaoDich.text(),'%H:%M %d/%m/%Y'))
+        # print(self.control.hoaDon.xe().thoiDiemThueXe())
         if self.control.checkTheDaDung(self.frameThe.lineEdit_MaThe.text()):
             msg = QtWidgets.QMessageBox()
             msg.setIcon(QtWidgets.QMessageBox.Information)
@@ -87,6 +88,8 @@ class ThueXeHoaDonQWidget(HoaDonQWidget):
             msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
             retval = msg.exec_()
             return
+        else:
+            self.control.hoaDon.xe().setMaThe(self.frameThe.lineEdit_MaThe.text())
         super().thanhToan()
 
 class TraXeHoaDonQWidget(HoaDonQWidget):

@@ -26,5 +26,7 @@ class ThueXeControl(MaVachControl):
         self.hoaDonQWidget.show()
         pass
 
-    def capNhatSauKhiThanhToan(self,maThe):
-        self.xe.capNhatThongTinThueXe(self.connect,maThe)
+    def capNhatSauKhiThanhToan(self):
+        # a=0
+        # print(self.hoaDon.xe().thoiDiemThueXe())
+        self.xe.capNhatThongTinThueXe(self.connect)

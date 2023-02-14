@@ -79,18 +79,22 @@ class Xe:
         self.__phuongThucThueXe=phuongThucThueXe
     def thoiDiemThueXe(self):
         return self.__thoiDiemThue
-    def setThoiDiemThueXe(self,thoiDiemThueXe):
+    def setThoiDiemThue(self,thoiDiemThueXe):
         self.__thoiDiemThue=thoiDiemThueXe
-    def setThoiDiemThueXe(self,thoiDiemNhanXe):
+        # print(self.__thoiDiemThue)
+    def setThoiDiemNhanXe(self,thoiDiemNhanXe):
         self.__thoiDiemNhanXe=thoiDiemNhanXe
     def thoiDiemNhanXe(self):
         return self.__thoiDiemNhanXe
     def maThe(self):
         return self.__maThe
+    def setMaThe(self,maThe):
+        self.__maThe=maThe
 
-    def capNhatThongTinThueXe(self,connectDB,maThe):
+
+    def capNhatThongTinThueXe(self,connectDB):
         connectDB.idu(f'DELETE FROM xe_trong_nha_xe WHERE maXe={self.__maXe}')
-        connectDB.connect.idu(f"INSERT INTO xe_dang_duoc_thue(maXe,maThe,nguoiThueXe,phuongThucThueXe,thoiDiemThue,noiThueXe) VALUES ({self.__maXe},'{maThe}','{self.__nguoiThueXe}',{self.xe.phuongThucThueXe()},'{self.__thoiDiemThueXe.strftime('%Y-%m-%d %H:%M:%S')}',{self.__maNhaXe})")
-    def capNhatThongTinTraXe(self,connectDB,maThe):
-        self.connect.idu(f"DELETE FROM xe_dang_duoc_thue WHERE maXe={self.__maXe}")
-        self.connect.idu(f"INSERT INTO xe_trong_nha_xe(maXe, maNhaXe, viTri, thoiDiemNhanXe) VALUES ({self.__maXe},{self.__maNhaXe},'{self.__viTri}','{self.__thoiDiemNhanXe.strftime('%Y-%m-%d %H:%M:%S')}')")
+        connectDB.idu(f"INSERT INTO xe_dang_duoc_thue(maXe,maThe,nguoiThueXe,phuongThucThueXe,thoiDiemThue,noiThueXe) VALUES ({self.__maXe},'{self.__maThe}','{self.__nguoiThueXe}',{self.__phuongThucThueXe},'{self.thoiDiemThueXe().strftime('%Y-%m-%d %H:%M:%S')}',{self.__maNhaXe})")
+    def capNhatThongTinTraXe(self,connectDB):
+        connectDB.idu(f"DELETE FROM xe_dang_duoc_thue WHERE maXe={self.__maXe}")
+        connectDB.idu(f"INSERT INTO xe_trong_nha_xe(maXe, maNhaXe, viTri, thoiDiemNhanXe) VALUES ({self.__maXe},{self.__maNhaXe},'{self.__viTri}','{self.__thoiDiemNhanXe.strftime('%Y-%m-%d %H:%M:%S')}')")
