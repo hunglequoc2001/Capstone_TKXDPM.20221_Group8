@@ -1,7 +1,7 @@
 import requests
 import json
 import hashlib
-class Interbank:
+class EcobikeBank:
     def __init__(self,baseurl):
         self.baseurl=baseurl
     def interbankPayment(self,cardCode, owner,cvvCode,dateExpired,command,transactionContent,amount,createdAt,appCode="",secretKey=""):
