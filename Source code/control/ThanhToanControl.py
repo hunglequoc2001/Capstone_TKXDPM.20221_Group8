@@ -13,8 +13,6 @@ class ThanhToanControl(BaseControl):
             return False
 
     def thanhToan(self,the):
-        if self.checkTheDaDung(the.maThe()):
-            raise Exception("Thẻ của bạn đã được dùng")
         if self.hoaDon.tien>0:
             # Thanh toán
             tien=self.hoaDon.tien

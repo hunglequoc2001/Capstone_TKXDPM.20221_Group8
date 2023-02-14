@@ -36,7 +36,7 @@ class HoaDonQWidget(QtWidgets.QWidget):
         self.label_ThoiDiemGiaoDich.setText(label_time)
     def closeEvent(self, event):
         if self.kq:
-            self.parent.mainWidget.control.capNhatSauKhiThanhToan(self.the)
+            self.parent.mainWidget.control.capNhatSauKhiThanhToan(self.the.maThe())
             thanhCong=ThanhToanThanhCongDialog(self)
             thanhCong.exec()
             self.parent.clickHomeButton()
@@ -107,7 +107,10 @@ class TraXeHoaDonQWidget(HoaDonQWidget):
         self.frameThe.lineEdit_MaThe.setText(hoaDon.xe().maThe())
         self.frameThe.lineEdit_MaThe.setReadOnly(True)
         self.lineEdit_NguoiGiaoDich.setText(hoaDon.xe().nguoiThueXe())
-        
+    def thanhToan(self):
+        self.control.hoaDon.xe().setThoiDiemNhanXe(datetime.strptime(self.label_ThoiDiemGiaoDich.text(),'%H:%M %d/%m/%Y'))
+        super().thanhToan()
+
         
 # if __name__ == "__main__":
 #     MainApp = QtWidgets.QApplication(sys.argv)

@@ -7,7 +7,7 @@ class ThueXeControl(MaVachControl):
     
     def timXe(self,maVach):
         super().timXe(maVach)
-        if not self.xe.kiemTraXeTrongNhaXe():
+        if not self.xe.kiemTraXeTrongNhaXe(conn=self.connect):
             raise Exception("Xe đã được thuê.\n Vui lòng chọn xe khác")
         # if self.xe.kiemTraXeDangDuocThue():
             # raise Exception("Xe bạn chọn đang trong quá trình trả xe.\nVui lòng chờ người thuê xe cũ hoàn tất thủ tục hoặc chọn xe khác")
@@ -26,6 +26,5 @@ class ThueXeControl(MaVachControl):
         self.hoaDonQWidget.show()
         pass
 
-    def capNhatSauKhiThanhToan(self,the):
-        self.connect.idu(f'DELETE FROM xe_trong_nha_xe WHERE maXe={self.xe.maXe()}')
-        self.connect.idu(f"INSERT INTO xe_dang_duoc_thue(maXe,maThe,nguoiThueXe,phuongThucThueXe,thoiDiemThue,noiThueXe) VALUES ({self.xe.maXe()},'{the.maThe()}','{self.xe.nguoiThueXe()}',{self.xe.phuongThucThueXe()},'{self.xe.thoiDiemThueXe().strftime('%Y-%m-%d %H:%M:%S')}',{self.xe.maNhaXe()})")
+    def capNhatSauKhiThanhToan(self,maThe):
+        self.xe.capNhatThongTinThueXe(self.connect,maThe)

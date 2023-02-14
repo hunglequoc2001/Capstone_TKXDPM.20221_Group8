@@ -25,8 +25,7 @@ class Xe:
             'Lượng pin': self.__luongPin
         }
     
-    def kiemTraXeDangDuocThue(self):
-        conn=ConnectDatabase(database=DB_NAME)
+    def kiemTraXeDangDuocThue(self,conn):
         res=conn.select(f'SELECT maThe,nguoiThueXe,phuongThucThueXe,thoiDiemThue,noiThueXe FROM xe_dang_duoc_thue WHERE maXe={self.__maXe}')
         if res:
             self.__maThe=res[0][0]
@@ -39,8 +38,7 @@ class Xe:
             return False
     def setNguoiThueXe(self,nguoiThueXe):
         self.__nguoiThueXe=nguoiThueXe
-    def kiemTraXeTrongNhaXe(self):
-        conn=ConnectDatabase(database=DB_NAME)
+    def kiemTraXeTrongNhaXe(self,conn):
         res=conn.select(f'SELECT maNhaXe,viTri,thoiDiemNhanXe FROM xe_trong_nha_xe WHERE maXe={self.__maXe}')
         if res:
             self.__maNhaXe=res[0][0]
@@ -83,7 +81,16 @@ class Xe:
         return self.__thoiDiemThue
     def setThoiDiemThueXe(self,thoiDiemThueXe):
         self.__thoiDiemThue=thoiDiemThueXe
+    def setThoiDiemThueXe(self,thoiDiemNhanXe):
+        self.__thoiDiemNhanXe=thoiDiemNhanXe
     def thoiDiemNhanXe(self):
         return self.__thoiDiemNhanXe
     def maThe(self):
         return self.__maThe
+
+    def capNhatThongTinThueXe(self,connectDB,maThe):
+        connectDB.idu(f'DELETE FROM xe_trong_nha_xe WHERE maXe={self.__maXe}')
+        connectDB.connect.idu(f"INSERT INTO xe_dang_duoc_thue(maXe,maThe,nguoiThueXe,phuongThucThueXe,thoiDiemThue,noiThueXe) VALUES ({self.__maXe},'{maThe}','{self.__nguoiThueXe}',{self.xe.phuongThucThueXe()},'{self.__thoiDiemThueXe.strftime('%Y-%m-%d %H:%M:%S')}',{self.__maNhaXe})")
+    def capNhatThongTinTraXe(self,connectDB,maThe):
+        self.connect.idu(f"DELETE FROM xe_dang_duoc_thue WHERE maXe={self.__maXe}")
+        self.connect.idu(f"INSERT INTO xe_trong_nha_xe(maXe, maNhaXe, viTri, thoiDiemNhanXe) VALUES ({self.__maXe},{self.__maNhaXe},'{self.__viTri}','{self.__thoiDiemNhanXe.strftime('%Y-%m-%d %H:%M:%S')}')")

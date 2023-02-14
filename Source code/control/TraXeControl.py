@@ -12,7 +12,7 @@ class TraXeControl(MaVachControl):
     
     def timXe(self,maVach):
         super().timXe(maVach)
-        if not self.xe.kiemTraXeDangDuocThue():
+        if not self.xe.kiemTraXeDangDuocThue(conn=self.connect):
             raise Exception('Xe không được thuê')
         self.view.loadThongTin(
             maXe=self.xe.maXe(),
@@ -58,6 +58,5 @@ class TraXeControl(MaVachControl):
         self.view.capNhatThongTinTien(tienThue=self.tienThue,tienCoc=self.tienCoc)
         pass
 
-    def capNhatSauKhiThanhToan(self,the):
-        self.connect.idu(f"DELETE FROM xe_dang_duoc_thue WHERE maXe={self.xe.maXe()}")
-        self.connect.idu(f"INSERT INTO xe_trong_nha_xe(maXe, maNhaXe, viTri, thoiDiemNhanXe) VALUES ({self.xe.maXe()},{self.xe.maNhaXe()},'{self.xe.viTri()}','{self.xe.thoiDiemNhanXe()}')")
+    def capNhatSauKhiThanhToan(self,maThe):
+        self.xe.capNhatThongTinTraXe(self.connect)
