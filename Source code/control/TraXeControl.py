@@ -31,10 +31,10 @@ class TraXeControl(MaVachControl):
 
     def traXe(self):
         maNhaXe=self.view.lineEdit_maNhaXe.text()
-        if maNhaXe=='':
-            Exception("Vui lòng nhập mã nhà xe")
+        if maNhaXe=="":
+            raise Exception("Vui lòng nhập mã nhà xe")
         if not maNhaXe.isnumeric():
-            Exception("Bạn nhập sai cú pháp mã nhà xe")
+            raise Exception("Bạn nhập sai cú pháp mã nhà xe")
         else:
             maNhaXe=int(maNhaXe)
         nhaXe=NhaXe(maNhaXe)

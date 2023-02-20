@@ -12,11 +12,13 @@ class ConnectDatabase:
     def select(self,sql_query):
         cursor=self.mydb.cursor()
         cursor.execute(sql_query)
-        return cursor.fetchall()
+        data= cursor.fetchall()
+        cursor.close()
+        return data
 
     def idu(self,sql_query):
         '''insert,delete,update'''
         cursor=self.mydb.cursor()
         cursor.execute(sql_query)
         self.mydb.commit()
-        
+        cursor.close()

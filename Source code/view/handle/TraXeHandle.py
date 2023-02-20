@@ -3,7 +3,7 @@ from os.path import exists,join
 from PyQt5.QtGui import QPixmap
 from control.TraXeControl import TraXeControl
 class TraXeQWidget(QtWidgets.QWidget):
-    def __init__(self,parent):
+    def __init__(self,parent,maXe=None):
         super().__init__()
         uic.loadUi("./view/ui/traXe.ui", self)
         self.dateTimeEdit.setDisplayFormat('hh:mm dd/MM/yyyy')
@@ -13,6 +13,9 @@ class TraXeQWidget(QtWidgets.QWidget):
         self.pushButtonTimXe.clicked.connect(self.timXe)
         self.pushButtonTraXe.clicked.connect(self.traXe)
         self.pushButtonTinhTien.clicked.connect(self.control.tinhTien)
+        if maXe:
+            self.lineEdit_maVach.setText(str(maXe))
+            self.timXe()
 
     def loadThongTin(self,maXe,nguoiThueXe,bienSoXe,giaCoc,loaiXe,phuongThucThueXe,thoiDiemThue):
         self.label_maXe.setText(f'{maXe}')

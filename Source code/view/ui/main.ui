@@ -261,6 +261,23 @@ QPushButton{
                  </widget>
                 </item>
                 <item>
+                 <widget class="QPushButton" name="xeDangThueButton">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../icon/xedangthue.png</normaloff>../icon/xedangthue.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>50</width>
+                    <height>50</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <widget class="QPushButton" name="traXeButton">
                   <property name="text">
                    <string/>
@@ -398,6 +415,12 @@ font: bold 24pt &quot;Arial&quot;;</string>
           </item>
           <item>
            <widget class="QScrollArea" name="scrollArea">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -409,7 +432,7 @@ font: bold 24pt &quot;Arial&quot;;</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>918</width>
+               <width>916</width>
                <height>667</height>
               </rect>
              </property>
