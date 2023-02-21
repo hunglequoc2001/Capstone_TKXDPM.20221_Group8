@@ -14,7 +14,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.xeDangThueButton.clicked.connect(self.clickXeDangThueButton)
         self.mainWidget=HomeHandle.HomeQWidget(self) 
         self.scrollArea.setWidget(self.mainWidget )
-        self.maXe=None
+        # self.maXe=None
         # self.centralwidget.setLayout(QtWidgets.QVBoxLayout())
 
     def side_Menu_Def(self):
@@ -61,7 +61,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.mainWidget=TraXeHandle.TraXeQWidget(self)
         self.scrollArea.setWidget(self.mainWidget )    
     
-    def traXe(self):
+    def traXe(self,maXe):
         self.mainLabel.setText("Trả xe")
         # self.mainWidget.close()
         
@@ -69,7 +69,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # self.scrollArea=QtWidgets.QScrollArea()
         # self.frame_3.layout().replaceWidget(scrollArea,self.scrollArea)
         # # print(2)
-        traXeWidget=TraXeHandle.TraXeQWidget(self,self.maXe)
+        traXeWidget=TraXeHandle.TraXeQWidget(self,maXe)
         # traXeWidget.show()
         w=self.scrollArea.takeWidget()
         self.scrollArea.setWidget(traXeWidget)    

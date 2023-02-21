@@ -10,7 +10,7 @@ class DanhSachXeDangThueQWidget(QtWidgets.QWidget):
         self.proxy = QtCore.QSortFilterProxyModel(self)
         self.control=DanhSachNhaXeControl(self)
         self.proxy.setSourceModel(self.model)
-        self.view.doubleClicked.connect(self.traXe)
+        self.view.doubleClicked.connect(self.control.traXe)
         self.view.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.ResizeToContents)
         self.view.setModel(self.proxy)
         self.lineEdit.textChanged.connect(self.on_lineEdit_textChanged)
@@ -94,8 +94,4 @@ class DanhSachXeDangThueQWidget(QtWidgets.QWidget):
     #     # 
     #     event.accept()
     #     # self.parent.clickHomeButton()
-
-    def traXe(self):
-        self.parent.maXe=self.control.layMaXe()
-        self.parent.traXe()
         # self.close()

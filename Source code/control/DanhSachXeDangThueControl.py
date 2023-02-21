@@ -17,8 +17,8 @@ class DanhSachNhaXeControl(BaseControl):
         self.view.model.setHorizontalHeaderLabels(listColumn)
         self.view.comboBox.addItems(listColumn)
 
-    def layMaXe(self):
+    def traXe(self):
         index= self.view.view.currentIndex()
         row = index.row()
         maXe = self.view.view.model().data(self.view.view.model().index(row, 0))       
-        return maXe
+        self.view.parent.traXe(maXe)
