@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets, uic,QtCore
 from os.path import exists,join
 from PyQt5.QtGui import QPixmap
 from entity.Xe import Xe
+from entity.XeDien import XeDien
 class ChiTietNhaXeQWidget(QtWidgets.QWidget):
     def __init__(self,nhaXe,parent):
         super().__init__()
@@ -28,7 +29,12 @@ class ChiTietNhaXeQWidget(QtWidgets.QWidget):
         i=0
         for maXe,vitri in danhSach:
             xe=Xe(maXe)
-            thongTin=xe.getThongTinXe()
+            thongTin={'Biển số xe':xe.bienSoXe(),'Loại xe':xe.loaiXe(),'Hãng xe':xe.hangXe()}
+            if "điện" in xe.loaiXe():
+                xe=XeDien(maXe)
+                thongTin["Lượng pin"]=xe.luongPin()
+            else:
+                thongTin["Lượng pin"]="Không có pin"
             # print(thongTin)
             thongTin['Vị trí']=vitri
             for j,l in enumerate(labels):

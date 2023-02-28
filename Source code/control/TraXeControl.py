@@ -20,7 +20,7 @@ class TraXeControl(MaVachControl):
             bienSoXe=self.xe.bienSoXe(),
             giaCoc=self.tienCoc,
             loaiXe=self.xe.loaiXe(),
-            phuongThucThueXe=PHUONGTHUCTHUEXE[self.xe.phuongThucThueXe()],
+            phuongThucThueXe=self.xe.phuongThucThueXe(),
             thoiDiemThue=self.xe.thoiDiemThueXe()
         )
         self.tinhTien=TinhTienThueXeFactory.getTinhTienThueXe(self.xe.phuongThucThueXe())

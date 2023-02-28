@@ -24,7 +24,7 @@ class HoaDonQWidget(QtWidgets.QWidget):
         self.label_LoaiXe.setText(hoaDon.xe().loaiXe())
         self.label_BienSoXe.setText(hoaDon.xe().bienSoXe())
         self.label_NhaXe.setText(f"{hoaDon.xe().tenNhaXe()}")
-        self.label_PhuongThucThueXe.setText(PHUONGTHUCTHUEXE[hoaDon.xe().phuongThucThueXe()])
+        self.label_PhuongThucThueXe.setText(hoaDon.xe().phuongThucThueXe())
         self.showTime()
         timer=QTimer(self)
         timer.timeout.connect(self.showTime)

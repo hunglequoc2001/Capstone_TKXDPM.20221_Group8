@@ -26,15 +26,20 @@ class ThueXeQWidget(QtWidgets.QWidget):
         self.pushButtonThueXe.clicked.connect(self.control.thueXe)
         self.frameThueXe.hide()
         
-    def loadThongTin(self,maXe,loaiXe,bienSoXe,giaCoc,luongPin):
-        self.label_maXe.setText(f"{maXe}")
-        self.label_bienSoXe.setText(bienSoXe)
+    def loadThongTin(self,xe,giaCoc):
+        self.label_maXe.setText(f"{xe.maXe()}")
+        self.label_bienSoXe.setText(xe.bienSoXe())
         self.label_giaCoc.setText(f"{int(giaCoc)} VNĐ")
-        self.label_loaiXe.setText(loaiXe)
-        if exists(join('./view/icon',f"{loaiXe}.png")):
-            pixmap=QPixmap(join('./view/icon',f"{loaiXe}.png"))
+        self.label_loaiXe.setText(xe.loaiXe())
+        if exists(join('./view/icon',f"{xe.loaiXe()}.png")):
+            pixmap=QPixmap(join('./view/icon',f"{xe.loaiXe()}.png"))
             self.label_xe.setPixmap(pixmap)
-        self.label_luongPin.setText(f"{luongPin}")
+        if "điện" in xe.loaiXe():
+            self.label_luongPin.setText(f"{xe.luongPin()}")
+        else:
+            self.label_luongPin.hide()
+            self.luongPinLabel.hide()
+        
 
     def timXe(self):
         try:

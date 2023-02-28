@@ -1,6 +1,7 @@
 from abc import  abstractmethod
 from control.BaseControl import BaseControl
 from entity.Xe import Xe
+from entity.XeDien import XeDien
 from utils.config import heSoTienCoc
 class MaVachControl(BaseControl):
     def __init__(self, view):
@@ -11,6 +12,8 @@ class MaVachControl(BaseControl):
         if not self.kiemTraMaVach(maVach):
             raise Exception('Mã Vạch không hợp lệ')
         self.xe=Xe(maVach)
+        if "điện" in self.xe.loaiXe():
+            self.xe=XeDien(maVach)
         self.tienCoc=self.xe.giaTriXe()*heSoTienCoc
 
     def kiemTraMaVach(self,maVach):

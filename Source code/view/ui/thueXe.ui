@@ -281,7 +281,7 @@ font: 14pt &quot;Arial&quot;;
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_10">
+                   <widget class="QLabel" name="luongPinLabel">
                     <property name="text">
                      <string>Lượng pin</string>
                     </property>
